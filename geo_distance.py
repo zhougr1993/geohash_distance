@@ -24,7 +24,10 @@ def get_geohash(hash_str):
     except:
         hash_str = list(hash_str)
         wrong_ch = hash_str.pop()
-        wrong_ch = chr(ord(wrong_ch)+1)
+        asiic_ch = ord(wrong_ch)+1
+        if assic_ch > 90:
+            assic_ch = 48
+        wrong_ch = chr(assic_ch)
         hash_str.append(wrong_ch)
         hash_str = ''.join(hash_str)
         return get_geohash(hash_str)
